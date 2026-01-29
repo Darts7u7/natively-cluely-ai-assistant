@@ -1,0 +1,15 @@
+{
+    "identifier": "default",
+    "description": "Default capabilities",
+    "windows": [
+        "*"
+    ],
+    "permissions": [
+        "core:default",
+        "process:default",
+        "autostart:default",
+        "opener:default",
+        "shell:default",
+        "sql:default"
+    ]
+}

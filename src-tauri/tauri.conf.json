@@ -1,0 +1,51 @@
+{
+    "$schema": "https://schema.tauri.app/config/2",
+    "productName": "Natively",
+    "version": "0.1.0",
+    "identifier": "com.natively.app",
+    "build": {
+        "beforeDevCommand": "npm run dev",
+        "devUrl": "http://localhost:1420",
+        "beforeBuildCommand": "npm run build",
+        "frontendDist": "../dist"
+    },
+    "app": {
+        "macOSPrivateApi": true,
+        "windows": [
+            {
+                "title": "Natively",
+                "width": 1200,
+                "height": 800,
+                "transparent": true,
+                "decorations": true,
+                "hiddenTitle": true,
+                "titleBarStyle": "Overlay",
+                "alwaysOnTop": true,
+                "resizable": true,
+                "visible": true
+            }
+        ],
+        "security": {
+            "csp": null
+        }
+    },
+    "bundle": {
+        "active": true,
+        "targets": "all",
+        "icon": [
+            "icons/AppIcon.icns",
+            "icons/icon_32x32.png",
+            "icons/icon_128x128.png",
+            "icons/icon_256x256.png",
+            "icons/icon_512x512.png",
+            "icons/icon_1024x1024.png"
+        ]
+    },
+    "plugins": {
+        "sql": {
+            "preload": [
+                "sqlite:natively.db"
+            ]
+        }
+    }
+}
